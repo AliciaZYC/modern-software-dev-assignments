@@ -9,7 +9,8 @@ NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
 YOUR_SYSTEM_PROMPT = """
-Example:
+
+<example>
 Question: What is 2^100 (mod 7)?
 Step 1: Find the pattern of powers of 2 mod 7
 - 2^1 mod 7 = 2
@@ -20,6 +21,7 @@ Step 2: The cycle length is 3
 Step 3: 100 mod 3 = 1
 Step 4: So 2^100 mod 7 = 2^1 mod 7 = 2
 Answer: 2
+</example>
 
 You are a math expert. Solve modular exponentiation problems step by step:
 1. Calculate small powers to find the repeating pattern (cycle)
