@@ -9,7 +9,18 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in! Try to get as close to 100% correctness across all runs as possible.
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are an expert maths logical problem solver. Solve this math word problem carefully.
+
+Instructions:
+- Read the problem multiple times to understand it fully
+- Break it into logical steps
+- Show your calculation for each step. Do NOT skip steps or jump to conclusions
+- Double-check arithmetic explicitly before giving the final answer
+- Conclude with "Answer: <number>" on the very last line
+
+Be thorough and precise in your reasoning.
+"""
 
 USER_PROMPT = """
 Solve this problem, then give the final answer on the last line as "Answer: <number>".
