@@ -34,10 +34,10 @@ ollama run llama3.1:8b
 ```
 
 ## Techniques and source files
-- K-shot prompting — `week1/k_shot_prompting.py`
-- Chain-of-thought — `week1/chain_of_thought.py`
-- Tool calling — `week1/tool_calling.py`
-- Self-consistency prompting — `week1/self_consistency_prompting.py`
+- K-shot prompting — `week1/k_shot_prompting.py` -- Done
+- Chain-of-thought — `week1/chain_of_thought.py` -- Done
+- Tool calling — `week1/tool_calling.py` -- Done
+- Self-consistency prompting — `week1/self_consistency_prompting.py` -- Done
 - RAG (Retrieval-Augmented Generation) — `week1/rag.py`
 - Reflexion — `week1/reflexion.py`
 

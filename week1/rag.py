@@ -37,7 +37,22 @@ QUESTION = (
 
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a specialized Python developer. Your task is to write code based ONLY on the provided API documentation.
+
+Rules:
+1. Use ONLY the information from the Context section
+2. Do NOT make assumptions about API endpoints, headers, or parameters
+3. Follow the documented API specification exactly
+4. Include all necessary imports
+5. Always call `response.raise_for_status()` to handle non-200 responses
+6. Write clean code
+
+Output format:
+- Include import statements
+- Output ONLY the Python code block. No explanations
+- Return only the specific field requested (the user's name)
+"""
 
 
 # For this simple example
@@ -56,7 +71,8 @@ def YOUR_CONTEXT_PROVIDER(corpus: List[str]) -> List[str]:
 
     For example, return [] to simulate missing context, or [corpus[0]] to include the API docs.
     """
-    return []
+    # return []
+    return [corpus[0]] if corpus else []
 
 
 def make_user_prompt(question: str, context_docs: List[str]) -> str:
