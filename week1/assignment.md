@@ -38,7 +38,7 @@ ollama run llama3.1:8b
 - Chain-of-thought — `week1/chain_of_thought.py` -- Done
 - Tool calling — `week1/tool_calling.py` -- Done
 - Self-consistency prompting — `week1/self_consistency_prompting.py` -- Done
-- RAG (Retrieval-Augmented Generation) — `week1/rag.py`
+- RAG (Retrieval-Augmented Generation) — `week1/rag.py` -- Done
 - Reflexion — `week1/reflexion.py`
 
 ## Deliverables

@@ -15,7 +15,26 @@ Keep the implementation minimal.
 """
 
 # TODO: Fill this in!
-YOUR_REFLEXION_PROMPT = ""
+YOUR_REFLEXION_PROMPT = """
+You are a specialized Python developer. Your previos code failed specific test cases.
+Your task is to analyze failures and fix code based on test failure feedback.
+
+Your task:
+- Analyze the provided code and test failures
+- Identify what's wrong with the current implementation
+- Generate a CORRECTED version that passes ALL tests
+
+Requirements of is_valid_password(password: str) -> bool:
+- Length >= 8 characters.
+- At least one lowercase letter.
+- At least one uppercase letter.
+- At least one digit.
+- At least one special character from the set: !@#$%^&*()-_
+
+Output:
+- No explanations or prose
+- Output ONLY a single fenced Python code block
+"""
 
 
 # Ground-truth test suite used to evaluate generated code
@@ -96,7 +115,15 @@ def your_build_reflexion_context(prev_code: str, failures: List[str]) -> str:
 
     Return a string that will be sent as the user content alongside the reflexion system prompt.
     """
-    return ""
+    # return ""
+    failure_reports = "\n".join(f"- {f}" for f in failures)
+    
+    return (
+        f"Previous implementation:\n\n"
+        f"```python\n{prev_code}\n```\n\n"
+        f"Test failures:\n{failure_reports}\n\n"
+        f"Please provide a corrected implementation."
+    )
 
 
 def apply_reflexion(
